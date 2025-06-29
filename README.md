@@ -546,10 +546,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **🔗 Share with your network admin friends!**
 
 ---
-
-### **Quick Links**
-- [🚀 Deploy to Railway](https://railway.app/new/template?template=https://github.com/azizuldz10/Mikrotik_Tunnel_check)
-- [📊 Live Demo](https://mikrotik-tunnel-check.railway.app)
-- [📚 Documentation](https://github.com/azizuldz10/Mikrotik_Tunnel_check/wiki)
-- [🐛 Report Bug](https://github.com/azizuldz10/Mikrotik_Tunnel_check/issues)
-- [💡 Request Feature](https://github.com/azizuldz10/Mikrotik_Tunnel_check/issues)
