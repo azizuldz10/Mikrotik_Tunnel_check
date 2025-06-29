@@ -66,8 +66,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/mikrotik-tunnel-monitor.git
-cd mikrotik-tunnel-monitor
+git clone https://github.com/azizuldz10/Mikrotik_Tunnel_check.git
+cd Mikrotik_Tunnel_check
 
 # Install dependencies
 pip install -r requirements.txt
@@ -311,8 +311,8 @@ heroku open
 
 1. **Clone Repository**
 ```bash
-git clone https://github.com/yourusername/mikrotik-tunnel-monitor.git
-cd mikrotik-tunnel-monitor
+git clone https://github.com/azizuldz10/Mikrotik_Tunnel_check.git
+cd Mikrotik_Tunnel_check
 ```
 
 2. **Create Virtual Environment (Optional)**
@@ -430,8 +430,8 @@ python app.py
 ### **Development Setup**
 ```bash
 # Fork repository
-git clone https://github.com/yourusername/mikrotik-tunnel-monitor.git
-cd mikrotik-tunnel-monitor
+git clone https://github.com/azizuldz10/Mikrotik_Tunnel_check.git
+cd Mikrotik_Tunnel_check
 
 # Create feature branch
 git checkout -b feature/amazing-feature
@@ -494,9 +494,9 @@ SOFTWARE.
 ## 📞 Support & Contact
 
 ### **Get Help**
-- **Issues**: [GitHub Issues](https://github.com/yourusername/mikrotik-tunnel-monitor/issues)
-- **Documentation**: [Wiki](https://github.com/yourusername/mikrotik-tunnel-monitor/wiki)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/mikrotik-tunnel-monitor/discussions)
+- **Issues**: [GitHub Issues](https://github.com/azizuldz10/Mikrotik_Tunnel_check/issues)
+- **Documentation**: [Wiki](https://github.com/azizuldz10/Mikrotik_Tunnel_check/wiki)
+- **Discussions**: [GitHub Discussions](https://github.com/azizuldz10/Mikrotik_Tunnel_check/discussions)
 
 ### **Feature Requests**
 - Open GitHub Issue dengan label "enhancement"
@@ -552,8 +552,8 @@ SOFTWARE.
 ---
 
 ### **Quick Links**
-- [🚀 Deploy to Railway](https://railway.app/new/template)
-- [📊 Live Demo](https://your-app.railway.app)
-- [📚 Documentation](https://github.com/yourusername/mikrotik-tunnel-monitor/wiki)
-- [🐛 Report Bug](https://github.com/yourusername/mikrotik-tunnel-monitor/issues)
-- [💡 Request Feature](https://github.com/yourusername/mikrotik-tunnel-monitor/issues)
+- [🚀 Deploy to Railway](https://railway.app/new/template?template=https://github.com/azizuldz10/Mikrotik_Tunnel_check)
+- [📊 Live Demo](https://mikrotik-tunnel-check.railway.app)
+- [📚 Documentation](https://github.com/azizuldz10/Mikrotik_Tunnel_check/wiki)
+- [🐛 Report Bug](https://github.com/azizuldz10/Mikrotik_Tunnel_check/issues)
+- [💡 Request Feature](https://github.com/azizuldz10/Mikrotik_Tunnel_check/issues)

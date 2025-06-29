@@ -7,8 +7,8 @@ Thank you for your interest in contributing to Mikrotik Tunnel Monitor! This doc
 ### 1. **Fork the Repository**
 ```bash
 # Fork on GitHub, then clone your fork
-git clone https://github.com/yourusername/mikrotik-tunnel-monitor.git
-cd mikrotik-tunnel-monitor
+git clone https://github.com/azizuldz10/Mikrotik_Tunnel_check.git
+cd Mikrotik_Tunnel_check
 ```
 
 ### 2. **Set Up Development Environment**
