@@ -69,3 +69,17 @@ alerts_*.txt
 monitor_result_*.json
 multi_tunnel_results_*.json
 single_tunnel_*.json
+
+# Privacy - Real tunnel configurations
+config_real.json
+config_production.json
+config_private.json
+*_real.json
+*_private.json
+*_production.json
+
+# Database files
+tunnel_history.db
+*.db
+*.sqlite
+*.sqlite3

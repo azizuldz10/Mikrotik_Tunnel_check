@@ -1,8 +1,8 @@
 # 🚀 Mikrotik Tunnel Monitor
 
-**Professional real-time monitoring dashboard untuk 9 tunnel Mikrotik dengan Flask web interface, history tracking, dan downtime alerts.**
+**Professional real-time monitoring dashboard untuk tunnel Mikrotik dengan Flask web interface, history tracking, dan downtime alerts.**
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/azizuldz10/Mikrotik_Tunnel_check)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-2.3+-green.svg)](https://flask.palletsprojects.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -10,9 +10,9 @@
 ## ✨ Features
 
 ### 🎯 **Core Monitoring**
-- **Real-time monitoring** 9 tunnel Mikrotik
+- **Real-time monitoring** multiple tunnel Mikrotik
 - **TCP port checking** dengan timeout handling
-- **Ping monitoring** untuk host reachability
+- **Ping monitoring** untuk host reachability  
 - **Auto-refresh** dengan interval yang dapat disesuaikan
 - **Responsive design** untuk mobile dan desktop
 - **Error handling** dan retry logic yang robust
@@ -38,19 +38,21 @@
 - **Industry-standard** monitoring practices
 - **GDPR compliant** data handling
 
-## 🎯 Monitored Tunnel Locations
+## 🎯 Example Tunnel Locations
 
 | Location | Host | Port | Description |
 |----------|------|------|-------------|
-| **CIKARANG** | tunnel3.ebilling.id | 15633 | Server CIKARANG |
-| **TELUK BUYUNG** | tunnel3.ebilling.id | 17614 | Server TELUK BUYUNG |
-| **BATU JAYA** | tunnel3.ebilling.id | 15753 | Server BATU JAYA |
-| **SAMSAT** | tunnel3.ebilling.id | 18256 | Server SAMSAT |
-| **WARUNG KOTING** | tunnel3.ebilling.id | 18304 | Server WARUNG KOTING |
-| **BSR** | tunnel3.ebilling.id | 16053 | Server BSR |
-| **SUKATANI ALL** | 157.66.2.133 | 9999 | Server SUKATANI ALL |
-| **JALAN LAYANG** | vr4.logam.id | 2215 | Server JALAN LAYANG |
-| **CEGER CANGKRING** | 157.66.2.133 | 6969 | Server CEGER CANGKRING |
+| **JAKARTA PUSAT** | tunnel-jkt.example.com | 8080 | Server JAKARTA PUSAT |
+| **BANDUNG UTARA** | tunnel-bdg.example.com | 8081 | Server BANDUNG UTARA |
+| **SURABAYA TIMUR** | tunnel-sby.example.com | 8082 | Server SURABAYA TIMUR |
+| **MEDAN SELATAN** | tunnel-mdn.example.com | 8083 | Server MEDAN SELATAN |
+| **MAKASSAR BARAT** | tunnel-mks.example.com | 8084 | Server MAKASSAR BARAT |
+| **DENPASAR TENGAH** | tunnel-dps.example.com | 8085 | Server DENPASAR TENGAH |
+| **YOGYAKARTA KOTA** | 192.168.100.10 | 9090 | Server YOGYAKARTA KOTA |
+| **SEMARANG UTARA** | vpn-smg.company.local | 2222 | Server SEMARANG UTARA |
+| **PALEMBANG SELATAN** | 192.168.100.20 | 7777 | Server PALEMBANG SELATAN |
+
+> ⚠️ **Note**: These are example tunnel configurations. Replace with your actual tunnel details in `config.json`.
 
 ## 🚀 Quick Start
 
@@ -72,6 +74,10 @@ cd Mikrotik_Tunnel_check
 # Install dependencies
 pip install -r requirements.txt
 
+# Configure tunnels
+cp config_example.json config.json
+# Edit config.json dengan tunnel details Anda
+
 # Run application
 python app.py
 
@@ -91,6 +97,46 @@ docker run -p 5000:5000 tunnel-monitor
 # Access dashboard
 open http://localhost:5000
 ```
+
+## ⚙️ Configuration
+
+### **Setup Your Tunnels**
+
+1. **Copy example configuration**:
+   ```bash
+   cp config_example.json config.json
+   ```
+
+2. **Edit config.json** dengan tunnel details Anda:
+   ```json
+   {
+     "tunnels": [
+       {
+         "name": "YOUR_TUNNEL_NAME",
+         "host": "your-tunnel-host.com",
+         "port": 8080,
+         "description": "Your tunnel description",
+         "location": "Your Location"
+       }
+     ],
+     "settings": {
+       "timeout": 5,
+       "monitor_interval": 30,
+       "web_refresh_interval": 15
+     }
+   }
+   ```
+
+### **Configuration Options**
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| `timeout` | Connection timeout (seconds) | 5 |
+| `ping_count` | Number of ping packets | 2 |
+| `monitor_interval` | Background check interval (seconds) | 30 |
+| `web_refresh_interval` | Dashboard refresh interval (seconds) | 15 |
+| `max_concurrent_checks` | Maximum simultaneous checks | 3 |
+| `rate_limit_delay` | Minimum delay between requests (seconds) | 1 |
 
 ## 📊 Dashboard Features
 
@@ -137,17 +183,17 @@ GET /api/statistics             # Uptime statistics (7d)
 ```json
 {
   "tunnels": {
-    "CIKARANG": {
-      "name": "CIKARANG",
-      "host": "tunnel3.ebilling.id",
-      "port": 15633,
+    "JAKARTA PUSAT": {
+      "name": "JAKARTA PUSAT",
+      "host": "tunnel-jkt.example.com",
+      "port": 8080,
       "overall": true,
       "tcp": {
         "status": "online",
         "time": 45.2
       },
       "ping": {
-        "status": "success",
+        "status": "success", 
         "time": 42.1
       },
       "timestamp": "2024-12-27T15:30:00"
@@ -163,7 +209,7 @@ GET /api/statistics             # Uptime statistics (7d)
 ```json
 {
   "tunnel_statistics": {
-    "CIKARANG": {
+    "JAKARTA PUSAT": {
       "uptime_percentage": 98.5,
       "total_checks": 2016,
       "online_checks": 1986,
@@ -176,41 +222,6 @@ GET /api/statistics             # Uptime statistics (7d)
   "period_days": 7
 }
 ```
-
-## ⚙️ Configuration
-
-### **config.json Structure**
-```json
-{
-  "tunnels": [
-    {
-      "name": "CIKARANG",
-      "host": "tunnel3.ebilling.id",
-      "port": 15633,
-      "description": "Server CIKARANG - Port 15633",
-      "location": "Cikarang"
-    }
-  ],
-  "settings": {
-    "timeout": 5,
-    "ping_count": 2,
-    "monitor_interval": 30,
-    "web_refresh_interval": 15,
-    "fast_mode": true,
-    "adaptive_interval": true,
-    "max_concurrent_checks": 3,
-    "rate_limit_delay": 1,
-    "responsible_monitoring": true
-  }
-}
-```
-
-### **Customizable Settings**
-- **timeout**: Connection timeout (seconds)
-- **monitor_interval**: Background check interval (seconds)
-- **web_refresh_interval**: Dashboard refresh interval (seconds)
-- **max_concurrent_checks**: Maximum simultaneous checks
-- **rate_limit_delay**: Minimum delay between requests (seconds)
 
 ## 🔧 Tech Stack
 
@@ -229,7 +240,13 @@ Dashboard fully responsive dengan:
 - **Progressive Web App** features
 - **Offline capability** dengan service worker
 
-## 🛡️ Security & Safety
+## 🛡️ Security & Privacy
+
+### **Privacy Protection**
+- **No data collection** - semua data disimpan lokal
+- **Private tunnel details** - tidak ada logging ke external services
+- **Local database** - SQLite file di server Anda
+- **No telemetry** - tidak ada tracking atau analytics
 
 ### **Responsible Monitoring**
 - **Rate limiting**: Minimum 1 detik antar request
@@ -330,7 +347,10 @@ pip install -r requirements.txt
 
 4. **Configure Tunnels**
 ```bash
-# Edit config.json sesuai tunnel Anda
+# Copy example configuration
+cp config_example.json config.json
+
+# Edit config.json dengan tunnel details Anda
 nano config.json
 ```
 
@@ -373,7 +393,7 @@ curl http://localhost:5000/api/status
 
 #### Get Specific Tunnel History
 ```bash
-curl http://localhost:5000/api/history/CIKARANG?hours=24
+curl http://localhost:5000/api/history/JAKARTA%20PUSAT?hours=24
 ```
 
 #### Get Downtime Statistics
@@ -411,8 +431,8 @@ python app.py
 #### 4. **Tunnel Always Shows Offline**
 ```bash
 # Check network connectivity
-ping tunnel3.ebilling.id
-telnet tunnel3.ebilling.id 15633
+ping tunnel-jkt.example.com
+telnet tunnel-jkt.example.com 8080
 
 # Check firewall settings
 # Verify tunnel configuration in config.json
@@ -458,30 +478,6 @@ git push origin feature/amazing-feature
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 Mikrotik Tunnel Monitor
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ## 🙏 Acknowledgments
 
