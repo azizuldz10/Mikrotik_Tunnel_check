@@ -1,0 +1,78 @@
+{
+  "tunnels": [
+    {
+      "name": "CIKARANG",
+      "host": "tunnel3.ebilling.id",
+      "port": 15633,
+      "description": "Server CIKARANG - Port 15633",
+      "location": "Cikarang"
+    },
+    {
+      "name": "TELUK BUYUNG", 
+      "host": "tunnel3.ebilling.id",
+      "port": 17614,
+      "description": "Server TELUK BUYUNG - Port 17614",
+      "location": "Teluk Buyung"
+    },
+    {
+      "name": "BATU JAYA",
+      "host": "tunnel3.ebilling.id", 
+      "port": 15753,
+      "description": "Server BATU JAYA - Port 15753",
+      "location": "Batu Jaya"
+    },
+    {
+      "name": "SAMSAT",
+      "host": "tunnel3.ebilling.id",
+      "port": 18256,
+      "description": "Server SAMSAT - Port 18256",
+      "location": "Samsat"
+    },
+    {
+      "name": "WARUNG KOTING",
+      "host": "tunnel3.ebilling.id",
+      "port": 18304,
+      "description": "Server WARUNG KOTING - Port 18304",
+      "location": "Warung Koting"
+    },
+    {
+      "name": "BSR",
+      "host": "tunnel3.ebilling.id",
+      "port": 16053,
+      "description": "Server BSR - Port 16053",
+      "location": "BSR"
+    },
+    {
+      "name": "SUKATANI ALL",
+      "host": "157.66.2.133",
+      "port": 9999,
+      "description": "Server SUKATANI ALL - Port 9999",
+      "location": "Sukatani"
+    },
+    {
+      "name": "JALAN LAYANG",
+      "host": "vr4.logam.id",
+      "port": 2215,
+      "description": "Server JALAN LAYANG - Port 2215",
+      "location": "Jalan Layang"
+    },
+    {
+      "name": "CEGER CANGKRING",
+      "host": "157.66.2.133",
+      "port": 6969,
+      "description": "Server CEGER CANGKRING - Port 6969",
+      "location": "Ceger Cangkring"
+    }
+  ],
+  "settings": {
+    "timeout": 5,
+    "ping_count": 2,
+    "monitor_interval": 30,
+    "web_refresh_interval": 15,
+    "fast_mode": true,
+    "adaptive_interval": true,
+    "max_concurrent_checks": 3,
+    "rate_limit_delay": 1,
+    "responsible_monitoring": true
+  }
+}
